@@ -2,7 +2,7 @@
 
 A NeoForge 1.21.1 bridge mod that injects Cobblemon and Cobblemon Ranked data directly into the TAB plugin via PlaceholderAPI syntax.
 
-**Current Version:** 1.0.2
+**Current Version:** 1.0.3
 
 ## Features
 - Bypasses traditional ForgePlaceholderAPI hooking issues on NeoForge 1.21.1 by directly injecting placeholders into the TAB API.
