@@ -1,0 +1,22 @@
+# Gradle
+.gradle/
+build/
+
+# IDE configurations
+.idea/
+*.iml
+.vscode/
+bin/
+
+# Dependencies / large JAR files
+libs/*.jar
+
+# Local decompilation/temporary directories
+tmp_decomp/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

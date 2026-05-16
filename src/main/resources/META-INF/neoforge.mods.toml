@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[2,)"
+license="MIT"
+
+[[mods]]
+modId="cobblemon_papi_bridge"
+version="1.0.3"
+displayName="Cobblemon TAB Bridge"
+description='''
+A bridge mod that registers Cobblemon and Cobblemon Ranked placeholders directly into the TAB plugin for NeoForge.
+'''
+authors="Naotica"
+
+[[dependencies.cobblemon_papi_bridge]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.cobblemon_papi_bridge]]
+    modId="cobblemon"
+    type="required"
+    versionRange="[1.7,)"
+    ordering="NONE"
+    side="BOTH"

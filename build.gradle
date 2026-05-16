@@ -1,0 +1,56 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.moddev' version '2.0.80'
+}
+
+group = project.mod_group
+version = project.mod_version
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(Integer.parseInt(project.java_version))
+
+neoForge {
+    version = project.neoforge_version
+}
+
+repositories {
+    mavenCentral()
+    maven { url = "https://jitpack.io" }
+    maven { url = "https://maven.envyware.co.uk/releases" }
+    // Cobblemon Maven
+    maven {
+        url = "https://maven.impactdev.net/repository/development/"
+    }
+    // Flatdir for local Cobblemon Ranked JAR
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    // === TAB API ===
+    compileOnly("com.github.NEZNAMY:TAB-API:5.0.4")
+    // === ForgePlaceholderAPI ===
+    compileOnly("com.github.EnvyWare.ForgePlaceholderAPI:api:${project.papi_version}")
+
+    // Compile against any local jars placed in the libs/ folder
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly("org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
+}
+
+// Ensure the JAR is built correctly as a simple extension JAR
+jar {
+    archiveBaseName.set('CobblemonPAPIBridge')
+    archiveVersion.set(project.mod_version)
+
+    manifest {
+        attributes([
+            'Implementation-Title'  : 'CobblemonPAPIBridge',
+            'Implementation-Version': project.mod_version,
+        ])
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release.set(Integer.parseInt(project.java_version))
+}
