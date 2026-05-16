@@ -1,6 +1,6 @@
 # Cobblemon PAPI Bridge by Naotica
 
-A NeoForge 1.21.1 bridge mod that injects Cobblemon and Cobblemon Ranked data directly into the TAB plugin via PlaceholderAPI syntax.
+A NeoForge 1.21.1 bridge mod that injects Cobblemon and Cobblemon Ranked data directly into the TAB mod via PlaceholderAPI syntax.
 
 **Current Version:** 1.0.3
 
